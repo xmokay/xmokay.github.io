@@ -16,6 +16,15 @@
             "#4B0082",
             "#800080"
         ];
+        const bkcolors = [
+            "#008000",
+            "#4B0082",
+            "#0000FF",
+            "#FF0000",
+            "#FFFF00",
+            "#FFA500",
+            "lightgreen"
+        ];
         const code = pi.substring(start - 1, start - 1 + 4);
         const stack = get_stack(code);
         let stack_idx = 0;
@@ -113,6 +122,7 @@
             }
             document.getElementById("next_btn").textContent = "我已输入，请显示下一个";
             document.getElementById("display").style.color = colors[stack_idx % 7];
+            document.getElementById("display").style.backgroundColor = bkcolors[stack_idx % 7];
             stack_idx++;
         }
     </script>
