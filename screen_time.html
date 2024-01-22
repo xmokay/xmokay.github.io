@@ -31,7 +31,8 @@
         const stack = get_stack(code);
         let stack_idx = 0;
         let cal_positions = new Set();
-        for (let i = 0; i < Math.min(cal_min_count, stack.length); i++) {
+        cal_positions.add(stack.length - 1); //倒数第二个计算一次，加快遗忘之前输入的东西
+        for (let i = cal_positions.size; i < Math.min(cal_min_count, stack.length); i++) {
             let pos = Math.floor(Math.random() * stack.length);
             if (cal_positions.has(pos)) {
                 i--;
