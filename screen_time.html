@@ -50,9 +50,9 @@
                 let exp = "";
                 let result = 0;
                 let hard = 0;
-                if (last_cal_cost > 0 && last_cal_cost <= 15) {
+                if (last_cal_cost > 0 && last_cal_cost <= 10) {
                     hard = 1;
-                } else if (last_cal_cost > 0 && last_cal_cost < 10) {
+                } else if (last_cal_cost > 0 && last_cal_cost < 7) {
                     hard = 2;
                 }
                 for (let i = 0; i < cal_terms + hard; i++) {
@@ -84,7 +84,8 @@
                 input = parseInt(input, 10);
 
                 if (input === result) {
-                    last_cal_cost = Date.now() - start_time;
+                    last_cal_cost = (Date.now() - start_time) / 1000;
+                    console.log("last_cal_cost = " + last_cal_cost)
                     console.log("right!");
                     break;
                 } else {
