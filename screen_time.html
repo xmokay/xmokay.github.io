@@ -85,6 +85,9 @@
                 difficulty: {
                     // 其余字段继承 DEFAULT_DIFFICULTY：两项加法、不出负数。
                     // 只压低自适应加成，孩子答得快时最多加到 3 项，不会出现 4 个两位数连加。
+                    terms: 4, //temporary
+                    allowNegativeTerms: true, //temporary
+                    allowNegativeIntermediate: true, //temporary
                     adaptive: {
                         fastBonus: 1,
                         mediumBonus: 0
